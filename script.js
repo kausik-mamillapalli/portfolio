@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const whatsappMessage = `Hello, my name is ${name}. My email is ${email}. Here's my message: ${message}`;
    
         // WhatsApp URL (replace with your WhatsApp number)
-        const whatsappURL = `https://wa.me/919440232324?text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappURL = `https://wa.me/916281091957?text=${encodeURIComponent(whatsappMessage)}`;
    
         // Open WhatsApp in a new tab
         window.open(whatsappURL, '_blank');

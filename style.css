@@ -20,8 +20,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Neon border glow for navbar */
+}
+
+/* Logo with Neon Effect */
+.logo {
+    font-size: 1.8rem;
+    font-weight: lighter;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: white;
+    text-shadow: 0 0 5px #230223, 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Pink neon glow */
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+.logo:hover {
+    color: #0088ff; /* Blue hover color */
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* Brighter glow */
 }
 
 /* Navigation Links */
@@ -29,125 +44,31 @@ body {
     list-style: none;
     display: flex;
     gap: 1rem; /* Space between items */
-    flex-wrap: nowrap; /* Prevent wrapping of buttons */
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
 }
-
 .nav-links li {
     margin: 0;
 }
-
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem; /* Removed bold styling */
+    font-size: 1rem;
+    font-weight: lighter;
     display: flex;
-    align-items: center; /* Center icon and text vertically */
+    align-items: center; /* Align icons and text */
     gap: 0.5rem; /* Space between icon and text */
-    position: relative;
     transition: color 0.3s ease, text-shadow 0.3s ease;
     text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; /* Neon text glow */
 }
-
-/* Hover Effect */
 .nav-links a:hover {
-    color: #00ffff; /* Cyan color on hover */
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff; /* Brighter glow on hover */
+    color: red; /* Red hover color */
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px red; /* Red glow on hover */
 }
 
-/* Neon Effect for Icons */
-.nav-icon {
-    font-size: 1.2rem; /* Adjust icon size */
-    color: inherit; /* Match the link color */
-    text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff, 0 0 30px #00ffff; /* Neon glow for icons */
-}
-
-/* Logo/Name with Neon Effect */
-.logo {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #fff;
-    text-shadow: 0 0 5px #230223, 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Pink neon glow */
-    transition: text-shadow 0.3s ease, color 0.3s ease;
-}
-
-.logo:hover {
-    color: #0088ff; /* Pink on hover */
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* Brighter glow on hover */
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-    }
-
-    .nav-links {
-        gap: 0.5rem; /* Reduce spacing for smaller screens */
-    }
-
-    .nav-links a {
-        font-size: 0.9rem; /* Smaller text */
-    }
-
-    .nav-icon {
-        font-size: 1rem; /* Adjust icon size */
-    }
-
-    .logo {
-        font-size: 1.5rem; /* Adjust logo size */
-    }
-}
-
-/* Header */
-.navbar {
-    background: #010e1b;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   }
-   
-   .logo {
-    font-size: 1.8rem;
-    font-weight: lighter;
-    text-transform: capitalize;
-    text-decoration: none;
-   }
-   
-   .logo-red {
-    color: red; /* Red "K" */
-   }
-   
-   .logo-white {
-    color: white; /* White remaining text */
-   }
-   
-   .nav-links {
-    list-style: none;
-    display: flex;
-   }
-   
-   .nav-links li {
-    margin: 0 1rem;
-   }
-   
-   .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: lighter;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-   }
-   
-   .nav-links a:hover {
-    color: red; /* Red hover effect for links */
-   }
-   
-   #theme-toggle {
+/* Theme Toggle Button */
+#theme-toggle {
     background: white;
     color: #000;
     padding: 0.5rem 1rem;
@@ -156,12 +77,38 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
-   }
-   
-   #theme-toggle:hover {
+}
+#theme-toggle:hover {
     background: red;
     color: white;
-   }
+}
+
+/* Neon Effect for Icons */
+.nav-icon {
+    font-size: 1.2rem; /* Adjust icon size */
+    color: inherit; /* Match link color */
+    text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff, 0 0 30px #00ffff; /* Neon glow for icons */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 1rem; /* Adjust padding for mobile */
+    }
+    .nav-links {
+        gap: 0.5rem; /* Reduce spacing between links */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    }
+    .nav-links a {
+        font-size: 0.9rem; /* Smaller text for mobile */
+    }
+    .nav-icon {
+        font-size: 1rem; /* Adjust icon size */
+    }
+    .logo {
+        font-size: 1.5rem; /* Adjust logo size for smaller screens */
+    }
+}
 
 /* Hero Section */
 .hero-section {

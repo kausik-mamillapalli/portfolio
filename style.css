@@ -14,22 +14,23 @@ body {
 
 /* Navbar */
 .navbar {
-    background: #333;
+    background: #001f3f; /* Dark blue background */
     color: white;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    flex-wrap: wrap;
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Neon border glow for navbar */
 }
 
 /* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1rem; /* Add spacing between items */
+    gap: 1rem; /* Space between items */
     flex-wrap: nowrap; /* Prevent wrapping of buttons */
-    justify-content: center; /* Center align items */
+    justify-content: center;
     align-items: center;
 }
 
@@ -38,52 +39,71 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+    font-size: 1rem; /* Removed bold styling */
     display: flex;
     align-items: center; /* Center icon and text vertically */
     gap: 0.5rem; /* Space between icon and text */
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; /* Neon text glow */
 }
 
+/* Hover Effect */
 .nav-links a:hover {
-    color: red; /* Red hover effect for links */
+    color: #00ffff; /* Cyan color on hover */
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff; /* Brighter glow on hover */
 }
 
-/* Icons */
+/* Neon Effect for Icons */
 .nav-icon {
     font-size: 1.2rem; /* Adjust icon size */
     color: inherit; /* Match the link color */
+    text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff, 0 0 30px #00ffff; /* Neon glow for icons */
 }
 
-/* Responsive Navigation */
+/* Logo/Name with Neon Effect */
+.logo {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 0 5px #230223, 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Pink neon glow */
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover {
+    color: #0088ff; /* Pink on hover */
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* Brighter glow on hover */
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .navbar {
-        padding: 1rem; /* Adjust padding for mobile screens */
+        padding: 1rem;
     }
 
     .nav-links {
-        flex-direction: row; /* Ensure items remain in a row */
-        overflow-x: auto; /* Allow horizontal scrolling if needed */
-        gap: 0.5rem; /* Reduce space between items on mobile */
-        width: 100%; /* Full width for better alignment */
+        gap: 0.5rem; /* Reduce spacing for smaller screens */
     }
 
     .nav-links a {
-        font-size: 0.9rem; /* Reduce font size for smaller screens */
+        font-size: 0.9rem; /* Smaller text */
     }
 
     .nav-icon {
-        font-size: 1rem; /* Adjust icon size for smaller screens */
+        font-size: 1rem; /* Adjust icon size */
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Adjust logo size */
     }
 }
 
-
 /* Header */
 .navbar {
-    background: #333;
+    background: #010e1b;
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -93,8 +113,8 @@ body {
    
    .logo {
     font-size: 1.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-weight: lighter;
+    text-transform: capitalize;
     text-decoration: none;
    }
    
@@ -118,7 +138,7 @@ body {
    .nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: lighter;
     font-size: 1rem;
     transition: color 0.3s ease;
    }
@@ -148,19 +168,17 @@ body {
     background: url('images/hero-placeholder.jpg') no-repeat center center/cover;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Stack content vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 2rem;
-    background-size: cover; /* Ensure the image covers the screen */
-    background-position: center top; /* Position the image appropriately */
-    background-attachment: scroll; /* Fix performance issues on mobile */
     background-color: #000; /* Fallback color */
 }
 
+/* Hero Content */
 .hero-content {
-    max-width: 90%; /* Ensure responsive content width */
+    max-width: 90%;
     margin: 0 auto;
     padding: 1rem;
     color: #fff;
@@ -175,26 +193,88 @@ body {
 
 .hero-description {
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 2rem;
-    color: #ccc;
+    color: #ffdf80; /* Attractive golden yellow color */
 }
 
+/* Hero Buttons */
 .hero-buttons {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 1rem; /* Add space between buttons */
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: center;
 }
 
 .btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 300; /* Lighter font weight */
+    text-transform: uppercase;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    color: #fff; /* Neon white text */
 }
+
+/* Explore Button with Neon Effect */
+.explore-btn {
+    background: #28a745; /* Green */
+    color: white;
+    box-shadow: 0 0 10px #28a745, 0 0 20px #28a745, 0 0 30px #28a745; /* Neon green glow */
+}
+.explore-btn:hover {
+    background: #218838; /* Darker green */
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #28a745, 0 0 30px #28a745, 0 0 40px #28a745; /* Brighter glow on hover */
+}
+
+/* Connect Button with Neon Effect */
+.connect-btn {
+    background: transparent;
+    border: 2px solid #00ffff; /* Cyan border */
+    color: #00ffff; /* Cyan text */
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; /* Neon cyan glow */
+}
+.connect-btn:hover {
+    background: #00ffff; /* Cyan background */
+    color: #000; /* Black text */
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff; /* Brighter glow on hover */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh;
+        padding: 1.5rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    #typewriter {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%; /* Full-width buttons for mobile */
+        text-align: center;
+    }
+}
+
 
 /* Explore Button */
 .explore-btn {
@@ -249,53 +329,100 @@ body {
     }
 }
 
-
-   
-   /* Let's Connect Section */
-   .connect-section {
+/* Let's Connect Section */
+.connect-section {
     padding: 3rem 5%;
     text-align: center;
     background: #111;
     color: white;
-   }
-   
-   .connect-section h2 {
+}
+
+.connect-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-   }
-   
-   .connect-section p {
+}
+
+.connect-section p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-   }
-   
-   .social-links {
+}
+
+/* Social Links */
+.social-links {
     display: flex;
     justify-content: center;
     gap: 1rem;
-   }
-   
-   .social-btn {
+}
+
+/* Social Buttons with Colors and Animation */
+.social-btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 500;
     color: white;
+    text-transform: uppercase;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-   }
-   
-   .social-btn.linkedin { background: #0077b5; } /* LinkedIn Blue */
-   .social-btn.linkedin:hover { background: #005582; }
-   
-   .social-btn.gmail { background: #d14836; } /* Gmail Red */
-   .social-btn.gmail:hover { background: #b23121; }
-   
-   .social-btn.instagram { background: #e1306c; } /* Instagram Pink */
-   .social-btn.instagram:hover { background: #c1285d; }
-   
-   .social-btn.facebook { background: #4267b2; } /* Facebook Blue */
-   .social-btn.facebook:hover { background: #365899; }
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    animation: pulse 2s infinite; /* Light pulsing effect */
+}
+
+/* LinkedIn Button */
+.social-btn.linkedin {
+    background: linear-gradient(45deg, #0077b5, #00a0dc);
+    box-shadow: 0 0 10px #0077b5, 0 0 20px #0077b5;
+}
+.social-btn.linkedin:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #00a0dc, 0 0 40px #00a0dc;
+}
+
+/* Gmail Button */
+.social-btn.gmail {
+    background: linear-gradient(45deg, #d14836, #ea4335);
+    box-shadow: 0 0 10px #d14836, 0 0 20px #ea4335;
+}
+.social-btn.gmail:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #ea4335, 0 0 40px #ea4335;
+}
+
+/* Instagram Button */
+.social-btn.instagram {
+    background: linear-gradient(45deg, #e1306c, #f77737);
+    box-shadow: 0 0 10px #e1306c, 0 0 20px #f77737;
+}
+.social-btn.instagram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #f77737, 0 0 40px #f77737;
+}
+
+/* Facebook Button */
+.social-btn.facebook {
+    background: linear-gradient(45deg, #4267b2, #3b5998);
+    box-shadow: 0 0 10px #4267b2, 0 0 20px #3b5998;
+}
+.social-btn.facebook:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #3b5998, 0 0 40px #3b5998;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+}
+
 
 /* About Section */
 .about-section {
@@ -378,78 +505,183 @@ body {
     }
 }
 
-   
-   /* Social Icons */
-   .social-icons {
+/* Social Icons Section */
+.social-icons {
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    gap: 1.5rem; /* Space between icons */
     margin-top: 2rem;
-   }
-   
-   .social-link img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-   }
-   
-   .social-link img:hover {
-    transform: scale(1.1);
-   }
+}
+
+/* Shared Icon Style */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Circle shape */
+    text-decoration: none;
+    font-size: 1.5rem; /* Icon font size */
+    color: white;
+    background: #333; /* Default background */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    animation: icon-bounce 2s infinite; /* Add bounce animation */
+}
+
+/* Icon Hover Effect */
+.social-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Individual Icon Colors */
+.social-icon.linkedin {
+    background: linear-gradient(45deg, #0077b5, #00a0dc);
+    box-shadow: 0 0 15px #0077b5, 0 0 30px #00a0dc;
+}
+.social-icon.linkedin:hover {
+    box-shadow: 0 0 25px #00a0dc, 0 0 35px #0077b5;
+}
+
+.social-icon.instagram {
+    background: linear-gradient(45deg, #e1306c, #f77737);
+    box-shadow: 0 0 15px #e1306c, 0 0 30px #f77737;
+}
+.social-icon.instagram:hover {
+    box-shadow: 0 0 25px #f77737, 0 0 35px #e1306c;
+}
+
+.social-icon.github {
+    background: linear-gradient(45deg, #333, #666);
+    box-shadow: 0 0 15px #333, 0 0 30px #666;
+}
+.social-icon.github:hover {
+    box-shadow: 0 0 25px #666, 0 0 35px #333;
+}
+
+.social-icon.facebook {
+    background: linear-gradient(45deg, #4267b2, #3b5998);
+    box-shadow: 0 0 15px #4267b2, 0 0 30px #3b5998;
+}
+.social-icon.facebook:hover {
+    box-shadow: 0 0 25px #3b5998, 0 0 35px #4267b2;
+}
+
+/* Animation for Icons */
+@keyframes icon-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Slight upward bounce */
+    }
+}
 
 /* My Projects Section */
 .portfolio-section {
     padding: 4rem 10%;
-    background: #111;
-    color: white;
+    background: #f4f4f4; /* Light background for a clean look */
+    color: #333;
     text-align: center;
-   }
-   
-   .portfolio-heading {
+}
+
+.portfolio-heading {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 2rem;
-    color: #fff;
-   }
-   
-   .projects-row {
+    color: #2c3e50; /* Darker, professional tone */
+}
+
+.projects-row {
     display: flex;
     gap: 2rem;
     justify-content: center;
     flex-wrap: wrap; /* Ensures responsiveness */
-   }
-   
-   .project-card {
-    background: #222;
+}
+
+/* Project Card */
+.project-card {
+    background: white;
     border-radius: 10px;
     padding: 1.5rem;
     width: 300px;
     cursor: pointer;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-   }
-   
-   .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-   }
-   
-   .project-image {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: relative;
+    overflow: hidden; /* Ensure animations remain contained */
+}
+
+/* Project Card Hover Animation */
+.project-card:hover {
+    transform: translateY(-5px); /* Smooth lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+}
+
+/* Project Image */
+.project-image {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 1rem;
-   }
-   
-   .project-card h3 {
+    transition: transform 0.3s ease; /* Subtle zoom effect */
+}
+.project-card:hover .project-image {
+    transform: scale(1.05); /* Slight zoom-in on hover */
+}
+
+/* Project Content */
+.project-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #fff;
-   }
-   
-   .project-card p {
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+.project-card:hover h3 {
+    color: #0077b5; /* Professional blue on hover */
+}
+
+.project-card p {
     font-size: 1rem;
     line-height: 1.5;
-    color: #bbb;
-   }
+    color: #555;
+}
+
+/* Button Style for Project Links */
+.project-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background: #0077b5; /* Professional blue */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.project-btn:hover {
+    background: #005582; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight upward motion */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .portfolio-heading {
+        font-size: 2rem;
+    }
+
+    .projects-row {
+        gap: 1rem;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+}
+
 
 /* Project Details Page */
 .project-header {

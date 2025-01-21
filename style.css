@@ -112,8 +112,8 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: url('images/hero-placeholder.jpg') no-repeat center center/cover;
-    min-height: 100vh;
+    background: url('images/hero-placeholder.jpg') no-repeat center center / cover;
+    min-height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,25 +123,28 @@ body {
     background-color: #000; /* Fallback color */
 }
 
+/* Hero Content */
 .hero-content {
-    max-width: 90%;
+    max-width: 800px; /* Limit width for readability */
     margin: 0 auto;
     padding: 1rem;
     color: #fff;
 }
 
 #typewriter {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Large and clear heading */
     font-weight: bold;
     white-space: nowrap;
     margin-bottom: 1rem;
+    line-height: 1.2; /* Better spacing */
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Larger description text for clarity */
     line-height: 1.8;
     margin-bottom: 2rem;
-    color: #ffdf80; /* Attractive golden yellow */
+    color: #ffdf80; /* Golden yellow for an attractive look */
+    padding: 0 1rem; /* Add padding for smaller screens */
 }
 
 /* Hero Buttons */
@@ -191,26 +194,35 @@ body {
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .hero-section {
-        min-height: 70vh;
+        min-height: 80vh; /* Reduce height for smaller screens */
         padding: 1.5rem;
-        background-size: contain; /* Ensure full image visibility */
     }
+
+    .hero-content {
+        padding: 1rem;
+        max-width: 90%; /* Limit width for smaller screens */
+    }
+
     #typewriter {
-        font-size: 2rem; /* Adjust heading size */
+        font-size: 2rem; /* Adjust font size for mobile */
     }
+
     .hero-description {
-        font-size: 1rem;
+        font-size: 1.2rem; /* Adjust description font size */
         margin-bottom: 1.5rem;
     }
+
     .hero-buttons {
         flex-direction: column; /* Stack buttons vertically */
         gap: 1rem;
     }
+
     .btn {
         width: 100%; /* Full-width buttons for mobile */
         text-align: center;
     }
 }
+
 
 /* Let's Connect Section */
 .connect-section {

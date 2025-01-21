@@ -113,7 +113,7 @@ body {
 /* Hero Section */
 .hero-section {
     background: url('images/hero-placeholder.jpg') no-repeat center center;
-    background-size: cover; /* Default full-cover image for larger screens */
+    background-size: cover; /* Ensure full cover on larger screens */
     background-attachment: fixed; /* Parallax effect */
     min-height: 100vh; /* Full viewport height */
     display: flex;
@@ -217,10 +217,10 @@ body {
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .hero-section {
-        background-size: contain; /* Ensure full image is visible in mobile */
-        background-position: center center; /* Align the image to center */
-        min-height: auto; /* Adjust height dynamically for mobile */
-        padding: 2rem 1.5rem; /* Reduce padding for better mobile layout */
+        background-size: contain; /* Ensure full image is visible on mobile without cropping */
+        background-position: center center; /* Center the image */
+        min-height: 60vh; /* Adjust minimum height to accommodate mobile */
+        padding: 2rem 1.5rem; /* Reduce padding on mobile */
     }
 
     .hero-content {

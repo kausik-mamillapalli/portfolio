@@ -16,24 +16,70 @@ body {
 .navbar {
     background: #333;
     color: white;
-    padding: 1rem;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Wrap items on smaller screens */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
+
+/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem; /* Space between items */
+    gap: 1rem; /* Add spacing between items */
+    flex-wrap: nowrap; /* Prevent wrapping of buttons */
+    justify-content: center; /* Center align items */
+    align-items: center;
 }
+
+.nav-links li {
+    margin: 0;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center; /* Center icon and text vertically */
+    gap: 0.5rem; /* Space between icon and text */
 }
+
+.nav-links a:hover {
+    color: red; /* Red hover effect for links */
+}
+
+/* Icons */
+.nav-icon {
+    font-size: 1.2rem; /* Adjust icon size */
+    color: inherit; /* Match the link color */
+}
+
+/* Responsive Navigation */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 1rem; /* Adjust padding for mobile screens */
+    }
+
+    .nav-links {
+        flex-direction: row; /* Ensure items remain in a row */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        gap: 0.5rem; /* Reduce space between items on mobile */
+        width: 100%; /* Full width for better alignment */
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+    }
+
+    .nav-icon {
+        font-size: 1rem; /* Adjust icon size for smaller screens */
+    }
+}
+
 
 /* Header */
 .navbar {

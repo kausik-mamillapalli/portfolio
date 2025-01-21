@@ -95,7 +95,7 @@ body {
 /* Hero Section */
 .hero-section {
     background: url('images/hero-placeholder.jpg') no-repeat center center;
-    background-size: cover; /* Ensure full cover on larger screens */
+    background-size: cover; /* Full cover for larger screens */
     background-attachment: fixed; /* Parallax effect */
     min-height: 100vh; /* Full viewport height */
     display: flex;
@@ -116,8 +116,6 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text contrast */
-    box-shadow: 0 0 50px 15px rgba(0, 255, 255, 0.5), 
-                0 0 100px 30px rgba(0, 255, 255, 0.3); /* Neon glow effect */
     z-index: 1; /* Ensure it appears below the text */
     pointer-events: none; /* Allow clicks through the overlay */
 }
@@ -125,10 +123,8 @@ body {
 /* Hero Content */
 .hero-content {
     position: relative;
-    z-index: 2; /* Place text above overlay */
+    z-index: 2; /* Place text above the overlay */
     max-width: 800px;
-    margin: 0;
-    padding: 1rem;
     color: #fff;
 }
 
@@ -139,7 +135,7 @@ body {
     white-space: nowrap;
     margin-bottom: 1rem;
     line-height: 1.2;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
                  0 0 20px rgba(0, 255, 255, 0.6); /* Glow effect for text */
 }
 
@@ -149,7 +145,6 @@ body {
     line-height: 1.8;
     margin-bottom: 2rem;
     color: #ffdf80;
-    padding: 0 1rem;
 }
 
 /* Hero Buttons */
@@ -157,9 +152,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: flex-start;
 }
 
+/* Buttons Styling */
 .btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
@@ -168,7 +163,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     color: #fff;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 /* Explore Button */
@@ -179,7 +174,6 @@ body {
 .explore-btn:hover {
     background: #218838;
     transform: translateY(-3px);
-    box-shadow: 0 0 20px #28a745, 0 0 40px #28a745;
 }
 
 /* Connect Button */
@@ -187,22 +181,22 @@ body {
     background: transparent;
     border: 2px solid #00ffff;
     color: #00ffff;
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    box-shadow: 0 0 10px #00ffff;
 }
 .connect-btn:hover {
     background: #00ffff;
     color: #000;
     transform: translateY(-3px);
-    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Mobile/Tablet */
 @media screen and (max-width: 768px) {
     .hero-section {
-        background-size: contain; /* Ensure full image is visible on mobile without cropping */
-        background-position: center center; /* Center the image */
-        min-height: 60vh; /* Adjust minimum height to accommodate mobile */
-        padding: 2rem 1.5rem; /* Reduce padding on mobile */
+        background-size: cover; /* Ensure full background visibility */
+        background-position: center; /* Center the image */
+        min-height: 100vh; /* Maintain full height on mobile */
+        padding: 2rem 1rem; /* Adjust padding for smaller devices */
+        justify-content: flex-start; /* Adjust content alignment */
     }
 
     .hero-content {
@@ -211,125 +205,23 @@ body {
     }
 
     #typewriter {
-        font-size: 2.5rem; /* Adjust font size for mobile */
+        font-size: 2rem; /* Adjust font size for smaller devices */
     }
 
     .hero-description {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Smaller font for description */
         margin-bottom: 1.5rem;
     }
 
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: column; /* Stack buttons on top of each other */
         gap: 1rem;
         width: 100%;
     }
 
     .btn {
-        width: auto;
-        text-align: left;
-    }
-}
-
-
-/* Let's Connect Section */
-.connect-section {
-    padding: 3rem 5%;
-    text-align: center;
-    background: #111; /* Dark background for contrast */
-    color: white;
-}
-
-.connect-section h2 {
-    font-size: 2.5rem; /* Slightly larger for emphasis */
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #00ffff; /* Cyan text for modern look */
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* Subtle glow for header */
-}
-
-.connect-section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    color: #ddd; /* Softer text color for better readability */
-}
-
-/* Social Links Container */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem; /* Increased spacing for clarity */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-}
-
-/* Social Buttons */
-.social-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Light glow effect */
-    animation: pulse 2s infinite; /* Subtle pulsing animation */
-}
-
-/* Individual Button Styles */
-.social-btn.linkedin {
-    background: linear-gradient(45deg, #0077b5, #00a0dc); /* LinkedIn blue gradient */
-    box-shadow: 0 0 10px #0077b5, 0 0 20px #0077b5;
-}
-.social-btn.gmail {
-    background: linear-gradient(45deg, #d14836, #ea4335); /* Gmail red gradient */
-    box-shadow: 0 0 10px #d14836, 0 0 20px #ea4335;
-}
-.social-btn.instagram {
-    background: linear-gradient(45deg, #e1306c, #f77737); /* Instagram pink-orange gradient */
-    box-shadow: 0 0 10px #e1306c, 0 0 20px #f77737;
-}
-.social-btn.facebook {
-    background: linear-gradient(45deg, #4267b2, #3b5998); /* Facebook blue gradient */
-    box-shadow: 0 0 10px #4267b2, 0 0 20px #3b5998;
-}
-
-/* Hover Effects for Social Buttons */
-.social-btn:hover {
-    transform: translateY(-5px); /* Slight upward motion */
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6); /* Stronger glow */
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .connect-section h2 {
-        font-size: 2rem; /* Adjust header size for smaller screens */
-    }
-
-    .connect-section p {
-        font-size: 1rem; /* Adjust paragraph size */
-    }
-
-    .social-links {
-        gap: 1rem; /* Reduce spacing for better alignment */
-    }
-
-    .social-btn {
-        padding: 0.6rem 1rem; /* Adjust button padding */
-        font-size: 0.9rem; /* Smaller font for buttons */
-    }
-}
-
-/* Pulse Animation */
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        width: 100%; /* Make buttons full-width for better usability */
+        text-align: center;
     }
 }
 

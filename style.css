@@ -123,7 +123,6 @@ body {
     background-color: #000; /* Fallback color */
 }
 
-/* Hero Content */
 .hero-content {
     max-width: 90%;
     margin: 0 auto;
@@ -142,7 +141,7 @@ body {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 2rem;
-    color: #ffdf80; /* Attractive golden yellow color */
+    color: #ffdf80; /* Attractive golden yellow */
 }
 
 /* Hero Buttons */
@@ -156,39 +155,37 @@ body {
 .btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
-    font-weight: 300; /* Lighter font weight */
+    font-weight: 300; /* Lighter font */
     text-transform: uppercase;
     border-radius: 5px;
     text-decoration: none;
+    color: #fff; /* Default button text color */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    color: #fff; /* Neon white text */
 }
 
-/* Explore Button with Neon Effect */
+/* Explore Button */
 .explore-btn {
     background: #28a745; /* Green */
-    color: white;
-    box-shadow: 0 0 10px #28a745, 0 0 20px #28a745, 0 0 30px #28a745; /* Neon green glow */
+    box-shadow: 0 0 10px #28a745, 0 0 20px #28a745;
 }
 .explore-btn:hover {
-    background: #218838; /* Darker green */
+    background: #218838; /* Darker green on hover */
     transform: translateY(-3px);
-    box-shadow: 0 0 20px #28a745, 0 0 30px #28a745, 0 0 40px #28a745; /* Brighter glow on hover */
+    box-shadow: 0 0 20px #28a745, 0 0 40px #28a745;
 }
 
-/* Connect Button with Neon Effect */
+/* Connect Button */
 .connect-btn {
     background: transparent;
     border: 2px solid #00ffff; /* Cyan border */
-    color: #00ffff; /* Cyan text */
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; /* Neon cyan glow */
+    color: #00ffff;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 .connect-btn:hover {
-    background: #00ffff; /* Cyan background */
+    background: #00ffff;
     color: #000; /* Black text */
     transform: translateY(-3px);
-    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff; /* Brighter glow on hover */
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
 }
 
 /* Responsive Adjustments */
@@ -196,80 +193,19 @@ body {
     .hero-section {
         min-height: 70vh;
         padding: 1.5rem;
+        background-size: contain; /* Ensure full image visibility */
     }
-
-    .hero-content {
-        padding: 1rem;
-    }
-
     #typewriter {
-        font-size: 2rem;
+        font-size: 2rem; /* Adjust heading size */
     }
-
     .hero-description {
         font-size: 1rem;
         margin-bottom: 1.5rem;
     }
-
     .hero-buttons {
         flex-direction: column; /* Stack buttons vertically */
         gap: 1rem;
     }
-
-    .btn {
-        width: 100%; /* Full-width buttons for mobile */
-        text-align: center;
-    }
-}
-
-
-/* Explore Button */
-.explore-btn {
-    background: #28a745; /* Green */
-    color: white;
-}
-.explore-btn:hover {
-    background: #218838; /* Darker green */
-    transform: translateY(-3px);
-}
-
-/* Connect Button */
-.connect-btn {
-    background: white;
-    color: #000;
-    border: 1px solid #fff;
-}
-.connect-btn:hover {
-    background: #ccc;
-    transform: translateY(-3px);
-}
-
-/* Responsive Adjustments for Smaller Screens */
-@media screen and (max-width: 768px) {
-    .hero-section {
-        min-height: 70vh; /* Reduce height for mobile */
-        background-size: contain; /* Ensure the entire image is visible */
-        padding: 1.5rem;
-    }
-
-    .hero-content {
-        padding: 1rem;
-    }
-
-    #typewriter {
-        font-size: 2rem; /* Adjust font size for mobile */
-    }
-
-    .hero-description {
-        font-size: 1rem; /* Adjust description font size */
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 1rem;
-    }
-
     .btn {
         width: 100%; /* Full-width buttons for mobile */
         text-align: center;
@@ -301,72 +237,49 @@ body {
     gap: 1rem;
 }
 
-/* Social Buttons with Colors and Animation */
 .social-btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: 500;
-    color: white;
     text-transform: uppercase;
     border-radius: 5px;
     text-decoration: none;
-    position: relative;
-    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    animation: pulse 2s infinite; /* Light pulsing effect */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Light glow */
+    animation: pulse 2s infinite; /* Subtle pulsing animation */
 }
 
-/* LinkedIn Button */
+/* Individual Button Colors */
 .social-btn.linkedin {
     background: linear-gradient(45deg, #0077b5, #00a0dc);
     box-shadow: 0 0 10px #0077b5, 0 0 20px #0077b5;
 }
-.social-btn.linkedin:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px #00a0dc, 0 0 40px #00a0dc;
-}
-
-/* Gmail Button */
 .social-btn.gmail {
     background: linear-gradient(45deg, #d14836, #ea4335);
     box-shadow: 0 0 10px #d14836, 0 0 20px #ea4335;
 }
-.social-btn.gmail:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px #ea4335, 0 0 40px #ea4335;
-}
-
-/* Instagram Button */
 .social-btn.instagram {
     background: linear-gradient(45deg, #e1306c, #f77737);
     box-shadow: 0 0 10px #e1306c, 0 0 20px #f77737;
 }
-.social-btn.instagram:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px #f77737, 0 0 40px #f77737;
-}
-
-/* Facebook Button */
 .social-btn.facebook {
     background: linear-gradient(45deg, #4267b2, #3b5998);
     box-shadow: 0 0 10px #4267b2, 0 0 20px #3b5998;
 }
-.social-btn.facebook:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px #3b5998, 0 0 40px #3b5998;
+
+/* Social Button Hover Effects */
+.social-btn:hover {
+    transform: translateY(-3px); /* Slight upward motion */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); /* Stronger glow */
 }
 
 /* Pulse Animation */
 @keyframes pulse {
-    0% {
+    0%, 100% {
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
     50% {
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
 }
 

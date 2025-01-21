@@ -1,49 +1,47 @@
 /* General Reset */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body { 
-    font-family: 'Arial', sans-serif; 
-    line-height: 1.6; 
-    color: #fff; 
-    background: #000; 
-    scroll-behavior: smooth; 
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: #000;
+    scroll-behavior: smooth;
 }
 
 /* Navbar */
 .navbar {
-    background: #001f3f; /* Dark blue background */
+    background: #000305; /* Dark navy blue */
     color: white;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Neon border glow for navbar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
-/* Logo with Neon Effect */
+/* Logo */
 .logo {
     font-size: 1.8rem;
-    font-weight: lighter;
+    font-weight: bold;
     text-transform: capitalize;
     text-decoration: none;
-    color: white;
-    text-shadow: 0 0 5px #230223, 0 0 10px #ff00ff, 0 0 20px #ff00ff; /* Pink neon glow */
-    transition: text-shadow 0.3s ease, color 0.3s ease;
+    color: #61dafb; /* Attractive light blue */
+    transition: color 0.3s ease;
 }
 .logo:hover {
-    color: #0088ff; /* Blue hover color */
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* Brighter glow */
+    color: #0288d1; /* Slightly darker blue on hover */
 }
 
 /* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1rem; /* Space between items */
+    gap: 1.5rem; /* Space between items */
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap; /* Prevent wrapping */
@@ -52,42 +50,42 @@ body {
     margin: 0;
 }
 .nav-links a {
-    color: #fff;
+    color: #e1e5ea; /* Light gray for better readability */
     text-decoration: none;
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: 500; /* Medium font weight for better legibility */
     display: flex;
     align-items: center; /* Align icons and text */
     gap: 0.5rem; /* Space between icon and text */
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; /* Neon text glow */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 .nav-links a:hover {
-    color: red; /* Red hover color */
-    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px red; /* Red glow on hover */
+    color: #ff7043; /* Soft orange for hover */
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Theme Toggle Button */
 #theme-toggle {
-    background: white;
+    background: #61dafb; /* Light blue background */
     color: #000;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 #theme-toggle:hover {
-    background: red;
+    background: #0288d1; /* Slightly darker blue on hover */
     color: white;
+    transform: scale(1.05); /* Subtle zoom on hover */
 }
 
-/* Neon Effect for Icons */
+/* Navigation Icons */
 .nav-icon {
-    font-size: 1.2rem; /* Adjust icon size */
+    font-size: 1.2rem; /* Icon size */
     color: inherit; /* Match link color */
-    text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff, 0 0 30px #00ffff; /* Neon glow for icons */
 }
 
 /* Responsive Adjustments */
@@ -96,11 +94,11 @@ body {
         padding: 1rem; /* Adjust padding for mobile */
     }
     .nav-links {
-        gap: 0.5rem; /* Reduce spacing between links */
+        gap: 1rem; /* Reduce spacing between links */
         flex-wrap: wrap; /* Allow wrapping on smaller screens */
     }
     .nav-links a {
-        font-size: 0.9rem; /* Smaller text for mobile */
+        font-size: 0.9rem; /* Slightly smaller text for mobile */
     }
     .nav-icon {
         font-size: 1rem; /* Adjust icon size */
@@ -109,6 +107,7 @@ body {
         font-size: 1.5rem; /* Adjust logo size for smaller screens */
     }
 }
+
 
 /* Hero Section */
 .hero-section {
@@ -223,32 +222,38 @@ body {
     }
 }
 
-
 /* Let's Connect Section */
 .connect-section {
     padding: 3rem 5%;
     text-align: center;
-    background: #111;
+    background: #111; /* Dark background for contrast */
     color: white;
 }
 
 .connect-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem; /* Slightly larger for emphasis */
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #00ffff; /* Cyan text for modern look */
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* Subtle glow for header */
 }
 
 .connect-section p {
     font-size: 1.2rem;
+    line-height: 1.8;
     margin-bottom: 2rem;
+    color: #ddd; /* Softer text color for better readability */
 }
 
-/* Social Links */
+/* Social Links Container */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem; /* Increased spacing for clarity */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
+/* Social Buttons */
 .social-btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
@@ -256,33 +261,56 @@ body {
     text-transform: uppercase;
     border-radius: 5px;
     text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Light glow */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Light glow effect */
     animation: pulse 2s infinite; /* Subtle pulsing animation */
 }
 
-/* Individual Button Colors */
+/* Individual Button Styles */
 .social-btn.linkedin {
-    background: linear-gradient(45deg, #0077b5, #00a0dc);
+    background: linear-gradient(45deg, #0077b5, #00a0dc); /* LinkedIn blue gradient */
     box-shadow: 0 0 10px #0077b5, 0 0 20px #0077b5;
 }
 .social-btn.gmail {
-    background: linear-gradient(45deg, #d14836, #ea4335);
+    background: linear-gradient(45deg, #d14836, #ea4335); /* Gmail red gradient */
     box-shadow: 0 0 10px #d14836, 0 0 20px #ea4335;
 }
 .social-btn.instagram {
-    background: linear-gradient(45deg, #e1306c, #f77737);
+    background: linear-gradient(45deg, #e1306c, #f77737); /* Instagram pink-orange gradient */
     box-shadow: 0 0 10px #e1306c, 0 0 20px #f77737;
 }
 .social-btn.facebook {
-    background: linear-gradient(45deg, #4267b2, #3b5998);
+    background: linear-gradient(45deg, #4267b2, #3b5998); /* Facebook blue gradient */
     box-shadow: 0 0 10px #4267b2, 0 0 20px #3b5998;
 }
 
-/* Social Button Hover Effects */
+/* Hover Effects for Social Buttons */
 .social-btn:hover {
-    transform: translateY(-3px); /* Slight upward motion */
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); /* Stronger glow */
+    transform: translateY(-5px); /* Slight upward motion */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6); /* Stronger glow */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .connect-section h2 {
+        font-size: 2rem; /* Adjust header size for smaller screens */
+    }
+
+    .connect-section p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    .social-links {
+        gap: 1rem; /* Reduce spacing for better alignment */
+    }
+
+    .social-btn {
+        padding: 0.6rem 1rem; /* Adjust button padding */
+        font-size: 0.9rem; /* Smaller font for buttons */
+    }
 }
 
 /* Pulse Animation */
@@ -294,6 +322,8 @@ body {
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
     }
 }
+
+
 
 
 /* About Section */
@@ -721,135 +751,197 @@ body {
 /* Contact Me Section */
 .contact-section {
     padding: 4rem 10%;
-    background: #111;
+    background: #111; /* Dark background for contrast */
     color: white;
     text-align: center;
     overflow: hidden;
-   }
-   
-   .section-heading {
+}
+
+/* Section Heading */
+.section-heading {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 2rem;
     color: #fff;
     animation: fadeIn 1s ease-in-out;
-   }
-   
-   /* Email Address */
-   .email {
+}
+
+/* Email Address */
+.email {
     margin-bottom: 2rem;
     animation: fadeIn 1.5s ease-in-out;
-   }
-   
-   .email p {
+}
+.email p {
     font-size: 1.2rem;
-    color: #ccc;
-   }
-   
-   .email-link {
+    color: #ccc; /* Softer text color */
+}
+.email-link {
     font-size: 1.5rem;
     color: #28a745; /* Green email link */
     font-weight: bold;
     text-decoration: none;
-   }
-   
-   .email-link:hover {
-    color: #fff;
-   }
-   
-   /* Social Media Links */
-   .social-links {
+    transition: color 0.3s ease;
+}
+.email-link:hover {
+    color: #fff; /* Change to white on hover */
+}
+
+/* Social Media Links */
+.social-links {
     margin: 2rem 0;
     animation: fadeIn 2s ease-in-out;
-   }
-   
-   .social-icons {
+}
+.social-icons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem; /* Spacing between icons */
     margin-top: 1rem;
-   }
-   
-   .social-link img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-   }
-   
-   .social-link img:hover {
-    transform: scale(1.1);
-   }
-   
-   /* Contact Form */
-   .contact-form-container {
+}
+
+/* Social Link Icon Wrapper */
+.social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Circle shape */
+    position: relative;
+    overflow: hidden; /* To contain the gradient animation */
+    background: linear-gradient(45deg, #444, #222); /* Default gradient background */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Animated Gradient Background */
+.social-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; /* Larger than the container */
+    height: 200%;
+    background: linear-gradient(45deg, #0077b5, #e1306c, #f77737, #4267b2, #d14836);
+    background-size: 300%;
+    animation: gradientShift 5s linear infinite; /* Smooth gradient animation */
+    z-index: 1;
+}
+
+/* Icon */
+.social-link img {
+    width: 24px;
+    height: 24px;
+    z-index: 2; /* Above the gradient */
+    transition: transform 0.3s ease; /* Hover effect for scaling */
+}
+
+/* Hover Effects */
+.social-link:hover {
+    transform: scale(1.1); /* Slight enlargement on hover */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Glow effect */
+}
+.social-link:hover img {
+    transform: scale(1.2); /* Enlarge the icon slightly on hover */
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+/* Contact Form */
+.contact-form-container {
     margin-top: 3rem;
     animation: fadeIn 2.5s ease-in-out;
-   }
-   
-   .contact-form-container h3 {
+}
+.contact-form-container h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-   }
-   
-   #contact-form {
+    color: #61dafb; /* Attractive light blue for the form title */
+}
+#contact-form {
     max-width: 500px;
     margin: 0 auto;
     text-align: left;
-   }
-   
-   #contact-form label {
+}
+#contact-form label {
     display: block;
     margin-bottom: 0.5rem;
     font-size: 1rem;
     color: #ccc;
-   }
-   
-   #contact-form input,
-   #contact-form textarea {
+}
+#contact-form input,
+#contact-form textarea {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: none;
+    border: 1px solid #444; /* Subtle border for inputs */
     border-radius: 5px;
     background: #222;
     color: white;
-   }
-   
-   #contact-form button {
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #61dafb; /* Light blue border on focus */
+    outline: none;
+}
+
+/* Submit Button */
+#contact-form button {
     display: inline-block;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background: #28a745;
+    background: #28a745; /* Green background */
+    border: none;
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-   }
-   
-   #contact-form button:hover {
+}
+#contact-form button:hover {
     background: #218838; /* Darker green on hover */
-    transform: translateY(-3px);
-   }
-   
-   /* Animations */
-   @keyframes fadeIn {
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Animations */
+@keyframes fadeIn {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-   }
-
-/* Keyframes for Animations */
-@keyframes typing { 0% { width: 0; } 100% { width: 100%; } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes bounce {
- 0%, 100% { transform: translateY(0); }
- 50% { transform: translateY(-10px); }
 }
-@keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

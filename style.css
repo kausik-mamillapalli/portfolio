@@ -112,7 +112,7 @@ body {
 /* Hero Section */
 .hero-section {
     background: url('images/hero-placeholder.jpg') no-repeat center center;
-    background-size: contain; /* Ensure the image fully fits the container */
+    background-size: cover; /* Default full-cover image for larger screens */
     min-height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
@@ -196,17 +196,17 @@ body {
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .hero-section {
-        background-size: contain; /* Ensure full image is visible */
-        background-position: top center; /* Adjust image position for mobile */
-        min-height: 100vh; /* Maintain full viewport height */
-        padding: 1.5rem;
+        background-size: contain; /* Ensure full image is visible in mobile */
+        background-position: top left; /* Align the image to the top left */
+        min-height: 100vh; /* Maintain full height for smaller screens */
+        padding: 1.5rem; /* Reduce padding for smaller devices */
         align-items: flex-start; /* Align content to the left */
         text-align: left; /* Align text to the left */
     }
 
     .hero-content {
-        padding: 1rem;
         max-width: 100%; /* Use full width for smaller screens */
+        padding: 1rem;
     }
 
     #typewriter {
@@ -229,6 +229,7 @@ body {
         text-align: left; /* Align button text to the left */
     }
 }
+
 
 
 

@@ -24,17 +24,31 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
-/* Logo */
+/* Logo Container */
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-transform: capitalize;
     text-decoration: none;
-    color: #61dafb; /* Attractive light blue */
-    transition: color 0.3s ease;
 }
-.logo:hover {
-    color: #0288d1; /* Slightly darker blue on hover */
+.logo-container {
+    background-color: #fff; /* White background for the oval */
+    color: #000; /* Black text inside the oval */
+    padding: 0.5rem 1.5rem; /* Padding for spacing */
+    border-radius: 50px; /* Oval shape */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-size: 1.5rem; /* Adjusted font size */
+    font-weight: 700; /* Bold text */
+    text-transform: capitalize;
+    display: inline-block; /* Ensures proper inline styling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.logo-container:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Highlight Specific Characters */
+.logo-highlight {
+    color: #ff9800; /* Orange color for highlighted characters */
 }
 
 /* Navigation Links */
@@ -54,9 +68,6 @@ body {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500; /* Medium font weight for better legibility */
-    display: flex;
-    align-items: center; /* Align icons and text */
-    gap: 0.5rem; /* Space between icon and text */
     transition: color 0.3s ease, transform 0.3s ease;
 }
 .nav-links a:hover {
@@ -82,12 +93,6 @@ body {
     transform: scale(1.05); /* Subtle zoom on hover */
 }
 
-/* Navigation Icons */
-.nav-icon {
-    font-size: 1.2rem; /* Icon size */
-    color: inherit; /* Match link color */
-}
-
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .navbar {
@@ -100,19 +105,18 @@ body {
     .nav-links a {
         font-size: 0.9rem; /* Slightly smaller text for mobile */
     }
-    .nav-icon {
-        font-size: 1rem; /* Adjust icon size */
-    }
-    .logo {
-        font-size: 1.5rem; /* Adjust logo size for smaller screens */
+    .logo-container {
+        font-size: 1.3rem; /* Smaller logo font for mobile screens */
     }
 }
+
 
 
 /* Hero Section */
 .hero-section {
     background: url('images/hero-placeholder.jpg') no-repeat center center;
-    background-size: cover; /* Default full-cover image for larger screens */
+    background-size: cover; /* Ensure full cover */
+    background-attachment: fixed; /* Parallax effect */
     min-height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
@@ -120,12 +124,29 @@ body {
     align-items: flex-start; /* Align content to the left */
     text-align: left; /* Align text to the left */
     padding: 2rem;
-    background-color: #000; /* Fallback color */
+    position: relative;
+}
+
+/* Neon Glow Overlay */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text contrast */
+    box-shadow: 0 0 50px 15px rgba(0, 255, 255, 0.5), 
+                0 0 100px 30px rgba(0, 255, 255, 0.3); /* Neon glow effect */
+    z-index: 1; /* Ensure it appears below the text */
+    pointer-events: none; /* Allow clicks through the overlay */
 }
 
 /* Hero Content */
 .hero-content {
-    max-width: 800px; /* Limit width for readability */
+    position: relative;
+    z-index: 2; /* Place text above overlay */
+    max-width: 800px;
     margin: 0;
     padding: 1rem;
     color: #fff;
@@ -133,20 +154,22 @@ body {
 
 /* Typewriter Heading */
 #typewriter {
-    font-size: 3rem; /* Large and clear heading */
+    font-size: 3rem;
     font-weight: bold;
     white-space: nowrap;
     margin-bottom: 1rem;
-    line-height: 1.2; /* Better spacing */
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(0, 255, 255, 0.6); /* Glow effect for text */
 }
 
 /* Hero Description */
 .hero-description {
-    font-size: 1.5rem; /* Larger description text for clarity */
+    font-size: 1.5rem;
     line-height: 1.8;
     margin-bottom: 2rem;
-    color: #ffdf80; /* Golden yellow for an attractive look */
-    padding: 0 1rem; /* Add padding for smaller screens */
+    color: #ffdf80;
+    padding: 0 1rem;
 }
 
 /* Hero Buttons */
@@ -154,27 +177,27 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: flex-start; /* Align buttons to the left */
+    justify-content: flex-start;
 }
 
 .btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
-    font-weight: 300; /* Lighter font */
+    font-weight: 300;
     text-transform: uppercase;
     border-radius: 5px;
     text-decoration: none;
-    color: #fff; /* Default button text color */
+    color: #fff;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Explore Button */
 .explore-btn {
-    background: #28a745; /* Green */
+    background: #28a745;
     box-shadow: 0 0 10px #28a745, 0 0 20px #28a745;
 }
 .explore-btn:hover {
-    background: #218838; /* Darker green on hover */
+    background: #218838;
     transform: translateY(-3px);
     box-shadow: 0 0 20px #28a745, 0 0 40px #28a745;
 }
@@ -182,13 +205,13 @@ body {
 /* Connect Button */
 .connect-btn {
     background: transparent;
-    border: 2px solid #00ffff; /* Cyan border */
+    border: 2px solid #00ffff;
     color: #00ffff;
     box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 .connect-btn:hover {
     background: #00ffff;
-    color: #000; /* Black text */
+    color: #000;
     transform: translateY(-3px);
     box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
 }
@@ -196,39 +219,40 @@ body {
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .hero-section {
-        background-size: contain; /* Ensure full image is visible in mobile */
+        background-size: contain; /* Ensure full image is visible */
         background-position: top left; /* Align the image to the top left */
-        min-height: 100vh; /* Maintain full height for smaller screens */
-        padding: 1.5rem; /* Reduce padding for smaller devices */
-        align-items: flex-start; /* Align content to the left */
-        text-align: left; /* Align text to the left */
+        min-height: auto; /* Adjust height dynamically */
+        padding: 1.5rem;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .hero-content {
-        max-width: 100%; /* Use full width for smaller screens */
+        max-width: 100%;
         padding: 1rem;
     }
 
     #typewriter {
-        font-size: 2rem; /* Adjust font size for mobile */
+        font-size: 2rem;
     }
 
     .hero-description {
-        font-size: 1.2rem; /* Adjust description font size */
+        font-size: 1.2rem;
         margin-bottom: 1.5rem;
     }
 
     .hero-buttons {
-        flex-direction: column; /* Stack buttons vertically */
+        flex-direction: column;
         gap: 1rem;
-        width: 100%; /* Full-width buttons */
+        width: 100%;
     }
 
     .btn {
-        width: auto; /* Ensure buttons do not stretch unnecessarily */
-        text-align: left; /* Align button text to the left */
+        width: auto;
+        text-align: left;
     }
 }
+
 
 
 

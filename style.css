@@ -100,41 +100,45 @@ body {
 /* Hero Section */
 .hero-section {
     background: url('images/hero-placeholder.jpg') no-repeat center center/cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column; /* Stack content vertically */
+    justify-content: center;
     align-items: center;
-    justify-content: center; /* Center everything */
     text-align: center;
     padding: 2rem;
+    background-size: cover; /* Ensure the image covers the screen */
+    background-position: center top; /* Position the image appropriately */
+    background-attachment: scroll; /* Fix performance issues on mobile */
     background-color: #000; /* Fallback color */
 }
 
 .hero-content {
-    max-width: 600px;
-    width: 90%; /* Responsive width */
-    margin-bottom: 2rem; /* Space below content */
+    max-width: 90%; /* Ensure responsive content width */
+    margin: 0 auto;
+    padding: 1rem;
+    color: #fff;
 }
 
 #typewriter {
     font-size: 2.5rem;
     font-weight: bold;
     white-space: nowrap;
-    margin-bottom: 1rem; /* Add spacing below heading */
+    margin-bottom: 1rem;
 }
 
 .hero-description {
     font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 2rem; /* Add spacing before buttons */
+    line-height: 1.6;
+    margin-bottom: 2rem;
     color: #ccc;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem; /* Space between buttons */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: center; /* Center buttons */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 1rem; /* Add space between buttons */
+    justify-content: center;
 }
 
 .btn {
@@ -170,28 +174,35 @@ body {
 /* Responsive Adjustments for Smaller Screens */
 @media screen and (max-width: 768px) {
     .hero-section {
-        height: 70vh; /* Reduce height */
-        padding: 1.5rem; /* Adjust padding */
+        min-height: 70vh; /* Reduce height for mobile */
+        background-size: contain; /* Ensure the entire image is visible */
+        padding: 1.5rem;
     }
 
     .hero-content {
-        margin-bottom: 1.5rem; /* Reduce spacing */
+        padding: 1rem;
     }
 
     #typewriter {
-        font-size: 1.8rem; /* Smaller heading */
+        font-size: 2rem; /* Adjust font size for mobile */
     }
 
     .hero-description {
-        font-size: 1rem;
-        margin-bottom: 1rem; /* Reduce spacing before buttons */
+        font-size: 1rem; /* Adjust description font size */
+        margin-bottom: 1.5rem;
     }
 
     .hero-buttons {
         flex-direction: column; /* Stack buttons vertically */
         gap: 1rem;
     }
+
+    .btn {
+        width: 100%; /* Full-width buttons for mobile */
+        text-align: center;
+    }
 }
+
 
    
    /* Let's Connect Section */

@@ -111,7 +111,8 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: url('images/hero-placeholder.jpg') no-repeat center center / cover;
+    background: url('images/hero-placeholder.jpg') no-repeat center center;
+    background-size: contain; /* Ensure the image fully fits the container */
     min-height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
@@ -195,7 +196,9 @@ body {
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .hero-section {
-        min-height: 100vh; /* Full height for smaller screens */
+        background-size: contain; /* Ensure full image is visible */
+        background-position: top center; /* Adjust image position for mobile */
+        min-height: 100vh; /* Maintain full viewport height */
         padding: 1.5rem;
         align-items: flex-start; /* Align content to the left */
         text-align: left; /* Align text to the left */
@@ -226,6 +229,7 @@ body {
         text-align: left; /* Align button text to the left */
     }
 }
+
 
 
 /* Let's Connect Section */

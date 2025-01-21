@@ -116,8 +116,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start; /* Align content to the left */
+    text-align: left; /* Align text to the left */
     padding: 2rem;
     background-color: #000; /* Fallback color */
 }
@@ -125,11 +125,12 @@ body {
 /* Hero Content */
 .hero-content {
     max-width: 800px; /* Limit width for readability */
-    margin: 0 auto;
+    margin: 0;
     padding: 1rem;
     color: #fff;
 }
 
+/* Typewriter Heading */
 #typewriter {
     font-size: 3rem; /* Large and clear heading */
     font-weight: bold;
@@ -138,6 +139,7 @@ body {
     line-height: 1.2; /* Better spacing */
 }
 
+/* Hero Description */
 .hero-description {
     font-size: 1.5rem; /* Larger description text for clarity */
     line-height: 1.8;
@@ -151,7 +153,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start; /* Align buttons to the left */
 }
 
 .btn {
@@ -193,13 +195,15 @@ body {
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .hero-section {
-        min-height: 80vh; /* Reduce height for smaller screens */
+        min-height: 100vh; /* Full height for smaller screens */
         padding: 1.5rem;
+        align-items: flex-start; /* Align content to the left */
+        text-align: left; /* Align text to the left */
     }
 
     .hero-content {
         padding: 1rem;
-        max-width: 90%; /* Limit width for smaller screens */
+        max-width: 100%; /* Use full width for smaller screens */
     }
 
     #typewriter {
@@ -214,13 +218,15 @@ body {
     .hero-buttons {
         flex-direction: column; /* Stack buttons vertically */
         gap: 1rem;
+        width: 100%; /* Full-width buttons */
     }
 
     .btn {
-        width: 100%; /* Full-width buttons for mobile */
-        text-align: center;
+        width: auto; /* Ensure buttons do not stretch unnecessarily */
+        text-align: left; /* Align button text to the left */
     }
 }
+
 
 /* Let's Connect Section */
 .connect-section {

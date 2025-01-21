@@ -1,12 +1,4 @@
-// Dark Mode Toggle
-document.getElementById('theme-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    document.body.classList.toggle('dark-theme');
-    document.getElementById('theme-toggle').textContent =
-      document.body.classList.contains('light-theme') ? 'Dark Mode' : 'Light Mode';
-   });
-   
-   // Back-to-Top Button
+      // Back-to-Top Button
    const backToTop = document.getElementById('back-to-top');
    window.addEventListener('scroll', () => {
     backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';

@@ -75,24 +75,6 @@ body {
     transform: scale(1.05); /* Slight zoom on hover */
 }
 
-/* Theme Toggle Button */
-#theme-toggle {
-    background: #61dafb; /* Light blue background */
-    color: #000;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-#theme-toggle:hover {
-    background: #0288d1; /* Slightly darker blue on hover */
-    color: white;
-    transform: scale(1.05); /* Subtle zoom on hover */
-}
-
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .navbar {

@@ -96,19 +96,21 @@ body {
 /* Hero Section */
 .hero-section {
     background: url('images/hero-placeholder.jpg') no-repeat center center;
-    background-size: cover; /* Ensure full cover on larger screens */
-    background-attachment: fixed; /* Parallax effect */
+    background-size: cover;
+    background-attachment: fixed;
     min-height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start; /* Align content to the left */
     text-align: left; /* Align text to the left */
-    padding: 2rem;
+    padding: 2rem 5%; /* Add consistent padding */
     position: relative;
+    color: #ffffff;
+    overflow: hidden;
 }
 
-/* Neon Glow Overlay */
+/* Dark Overlay for Contrast */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -116,103 +118,139 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text contrast */
-    box-shadow: 0 0 50px 15px rgba(0, 255, 255, 0.5), 
-                0 0 100px 30px rgba(0, 255, 255, 0.3); /* Neon glow effect */
-    z-index: 1; /* Ensure it appears below the text */
-    pointer-events: none; /* Allow clicks through the overlay */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    z-index: 1; /* Ensure it appears below the content */
 }
 
 /* Hero Content */
 .hero-content {
     position: relative;
-    z-index: 2; /* Place text above overlay */
+    z-index: 2; /* Place text above the overlay */
     max-width: 800px;
     margin: 0;
     padding: 1rem;
-    color: #fff;
 }
 
 /* Typewriter Heading */
 #typewriter {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
-    white-space: nowrap;
-    margin-bottom: 1rem;
     line-height: 1.2;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
-                 0 0 20px rgba(0, 255, 255, 0.6); /* Glow effect for text */
+    margin-bottom: 1rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* Hero Description */
 .hero-description {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.8;
     margin-bottom: 2rem;
-    color: #ffdf80;
+    color: #f5f5f5;
     padding: 0 1rem;
+    animation: slideInLeft 1.5s ease-in-out;
 }
 
 /* Hero Buttons */
 .hero-buttons {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack buttons vertically */
     gap: 1rem;
-    justify-content: flex-start;
+    align-items: flex-start; /* Align buttons to the left */
+    animation: fadeInUp 2s ease-in-out;
 }
 
 .btn {
     padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1.1rem;
+    font-weight: 400;
     text-transform: uppercase;
     border-radius: 5px;
     text-decoration: none;
     color: #fff;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Explore Button */
 .explore-btn {
-    background: #28a745;
-    box-shadow: 0 0 10px #28a745, 0 0 20px #28a745;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5), 0 0 20px rgba(40, 167, 69, 0.3);
 }
 .explore-btn:hover {
-    background: #218838;
+    color: #28a745;
+    border-color: #28a745;
     transform: translateY(-3px);
-    box-shadow: 0 0 20px #28a745, 0 0 40px #28a745;
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.8), 0 0 40px rgba(40, 167, 69, 0.6);
+}
+.explore-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5), 0 0 10px rgba(40, 167, 69, 0.3);
 }
 
 /* Connect Button */
 .connect-btn {
-    background: transparent;
-    border: 2px solid #00ffff;
-    color: #00ffff;
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
 }
 .connect-btn:hover {
-    background: #00ffff;
-    color: #000;
+    color: #00ffff;
+    border-color: #00ffff;
     transform: translateY(-3px);
-    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.6);
+}
+.connect-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .hero-section {
-        background-size: contain; /* Ensure full image is visible on mobile without cropping */
-        background-position: center center; /* Center the image */
-        min-height: 60vh; /* Adjust minimum height to accommodate mobile */
-        padding: 2rem 1.5rem; /* Reduce padding on mobile */
-    }
-
-    .hero-content {
-        max-width: 100%;
-        padding: 1rem;
+        background-size: contain;
+        background-position: center;
+        min-height: 70vh;
+        padding: 2rem 1.5rem;
     }
 
     #typewriter {
-        font-size: 2.5rem; /* Adjust font size for mobile */
+        font-size: 2.5rem;
     }
 
     .hero-description {
@@ -221,118 +259,16 @@ body {
     }
 
     .hero-buttons {
-        flex-direction: column;
         gap: 1rem;
         width: 100%;
     }
 
     .btn {
         width: auto;
-        text-align: left;
+        text-align: center;
     }
 }
 
-
-/* Let's Connect Section */
-.connect-section {
-    padding: 3rem 5%;
-    text-align: center;
-    background: #111; /* Dark background for contrast */
-    color: white;
-}
-
-.connect-section h2 {
-    font-size: 2.5rem; /* Slightly larger for emphasis */
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #00ffff; /* Cyan text for modern look */
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; /* Subtle glow for header */
-}
-
-.connect-section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    color: #ddd; /* Softer text color for better readability */
-}
-
-/* Social Links Container */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem; /* Increased spacing for clarity */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-}
-
-/* Social Buttons */
-.social-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Light glow effect */
-    animation: pulse 2s infinite; /* Subtle pulsing animation */
-}
-
-/* Individual Button Styles */
-.social-btn.linkedin {
-    background: linear-gradient(45deg, #0077b5, #00a0dc); /* LinkedIn blue gradient */
-    box-shadow: 0 0 10px #0077b5, 0 0 20px #0077b5;
-}
-.social-btn.gmail {
-    background: linear-gradient(45deg, #d14836, #ea4335); /* Gmail red gradient */
-    box-shadow: 0 0 10px #d14836, 0 0 20px #ea4335;
-}
-.social-btn.instagram {
-    background: linear-gradient(45deg, #e1306c, #f77737); /* Instagram pink-orange gradient */
-    box-shadow: 0 0 10px #e1306c, 0 0 20px #f77737;
-}
-.social-btn.facebook {
-    background: linear-gradient(45deg, #4267b2, #3b5998); /* Facebook blue gradient */
-    box-shadow: 0 0 10px #4267b2, 0 0 20px #3b5998;
-}
-
-/* Hover Effects for Social Buttons */
-.social-btn:hover {
-    transform: translateY(-5px); /* Slight upward motion */
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6); /* Stronger glow */
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .connect-section h2 {
-        font-size: 2rem; /* Adjust header size for smaller screens */
-    }
-
-    .connect-section p {
-        font-size: 1rem; /* Adjust paragraph size */
-    }
-
-    .social-links {
-        gap: 1rem; /* Reduce spacing for better alignment */
-    }
-
-    .social-btn {
-        padding: 0.6rem 1rem; /* Adjust button padding */
-        font-size: 0.9rem; /* Smaller font for buttons */
-    }
-}
-
-/* Pulse Animation */
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    50% {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-    }
-}
 
 /* About Section */
 .about-section {

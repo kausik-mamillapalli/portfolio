@@ -273,11 +273,12 @@ body {
 /* About Section */
 .about-section {
     padding: 4rem 10%;
-    background: #f9f9f9;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffffff, #f0f4f8); /* Subtle gradient for a professional look */
+    font-family: 'Poppins', sans-serif; /* Modern and professional font */
     color: #333;
 }
 
+/* About Container */
 .about-container {
     display: flex;
     gap: 2rem;
@@ -287,22 +288,31 @@ body {
     text-align: left;
 }
 
+/* About Image Container */
 .about-image {
     flex: 1;
     max-width: 300px;
     width: 100%;
-    position: relative; /* For positioning the effect */
+    position: relative;
     display: block;
     margin: 0 auto;
+    overflow: hidden; /* Ensures hover effects don't overflow */
+    border-radius: 15px; /* Rounded corners */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transitions */
 }
 
 .profile-photo {
     width: 100%;
     height: auto;
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 15px; /* Match container's rounded corners */
     position: relative;
-    z-index: 1; /* Ensure it's above the animated effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
 }
 
 /* Animated Light Effect */
@@ -313,12 +323,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 15px; /* Match the image corners */
+    border-radius: 15px; /* Match image corners */
     background: linear-gradient(45deg, #ff8a00, #ff2e63, #6a82fb, #00c6ff, #ff8a00); /* Gradient colors */
     background-size: 300% 300%; /* Enlarged background for animation */
-    z-index: 0; /* Place it behind the image */
-    filter: blur(15px); /* Add blur for a glowing effect */
-    animation: light-effect 6s linear infinite; /* Continuous animation */
+    z-index: 0;
+    filter: blur(15px); /* Glowing effect */
+    animation: light-effect 6s linear infinite; /* Continuous gradient animation */
 }
 
 /* Light Effect Animation */
@@ -338,12 +348,17 @@ body {
 .about-content {
     flex: 2;
     text-align: left;
+    animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in animation */
 }
 
 .about-content h2 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    background: linear-gradient(90deg, #ff8a00, #ff2e63); /* Vibrant gradient for the heading */
+    -webkit-background-clip: text; /* Clip gradient to text */
+    -webkit-text-fill-color: transparent; /* Transparent text fill for gradient effect */
+    animation: textGlow 3s infinite alternate; /* Glow effect animation */
 }
 
 .about-content p {
@@ -352,6 +367,15 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Highlight Key Words */
+.about-content p span {
+    font-weight: bold;
+    color: #ff2e63; /* Highlighted color */
+    text-shadow: 0 0 5px rgba(255, 46, 99, 0.6); /* Subtle glow for key words */
+    animation: keywordPulse 1.5s ease-in-out infinite; /* Pulsing effect on keywords */
+}
+
+/* Skills List */
 .skills-list {
     list-style-type: disc;
     padding-left: 20px;
@@ -362,6 +386,58 @@ body {
     font-weight: bold;
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    position: relative;
+    color: #6a82fb; /* Primary skill color */
+    text-shadow: 0 0 8px rgba(106, 130, 251, 0.5); /* Subtle neon glow */
+    transition: transform 0.3s ease;
+}
+
+.skills-list li::before {
+    content: "•"; /* Custom bullet point */
+    color: #ff8a00; /* Highlighted bullet */
+    font-size: 1.5rem;
+    position: absolute;
+    left: -25px; /* Positioning the bullet */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.skills-list li:hover {
+    transform: translateX(10px); /* Slight movement on hover */
+    color: #ff2e63; /* Highlight on hover */
+    text-shadow: 0 0 15px rgba(255, 46, 99, 0.8); /* Glow effect */
+}
+
+/* Animations */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 46, 99, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 30px rgba(255, 46, 99, 1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes keywordPulse {
+    0%, 100% {
+        color: #ff2e63;
+        text-shadow: 0 0 5px rgba(255, 46, 99, 0.6);
+    }
+    50% {
+        color: #ff8a00;
+        text-shadow: 0 0 10px rgba(255, 138, 0, 0.8);
+    }
 }
 
 /* Responsive Adjustments */
@@ -381,6 +457,10 @@ body {
 
     .about-content p {
         font-size: 1rem;
+    }
+
+    .skills-list li::before {
+        left: -20px; /* Adjust bullet position for smaller screens */
     }
 }
 
